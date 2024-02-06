@@ -16,6 +16,8 @@ struct ContentView: View {
     @State private var errorMessage = ""
     @State private var showingError = false
     
+    @State private var score = 0
+    
     
     var body: some View {
         NavigationStack {
@@ -31,12 +33,21 @@ struct ContentView: View {
                         }
                     }
                 }
+                
+                Section("Your Score"){
+                    Text("\(score)")
+                }
             }
             .navigationTitle(rootWord)
             .onSubmit(addNewWord)
             .onAppear(perform: startGame)
             .alert(errorTitle, isPresented: $showingError) { } message: {
                 Text(errorMessage)
+            }
+            .toolbar() {
+                Button("New Game") {
+                    startGame()
+                }
             }
         }
     
@@ -62,9 +73,20 @@ struct ContentView: View {
             return
         }
         
+        guard isLongEnough(word: answer) else {
+            wordError(title: "Word is too short", message: "You can't guess a word with less than three letters!")
+            return
+        }
+        
+        guard isNotTheStartWord(word: answer) else {
+            wordError(title: "Word is the start word", message: "You can't enter same word as the start word!")
+            return
+        }
+        
         withAnimation {
             usedWords.insert(answer, at: 0)
         }
+        score += 1 + answer.count
         newWord = ""
     }
     
@@ -74,6 +96,7 @@ struct ContentView: View {
             if let startWords = try? String(contentsOf: startWordURL) {
                 let allWords = startWords.components(separatedBy: "\n")
                 rootWord = allWords.randomElement() ?? "silkworm"
+                score = 0
                 return
             }
         }
@@ -104,6 +127,14 @@ struct ContentView: View {
         let range = NSRange(location: 0, length: word.utf16.count)
         let missspelledRange = checker.rangeOfMisspelledWord(in: word, range: range, startingAt: 0, wrap: false, language: "en")
         return missspelledRange.location == NSNotFound
+    }
+    
+    func isLongEnough(word: String) -> Bool {
+        word.count >= 3
+    }
+    
+    func isNotTheStartWord(word: String) -> Bool {
+        word != rootWord
     }
     
     func wordError(title: String, message: String) {
