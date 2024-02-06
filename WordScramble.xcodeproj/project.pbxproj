@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B4452B062B7277F5001DC271 /* start.txt in Resources */ = {isa = PBXBuildFile; fileRef = B4452B052B7277F5001DC271 /* start.txt */; };
+		B4452B092B727A53001DC271 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = B4452B072B727A53001DC271 /* .gitignore */; };
+		B4452B0A2B727A53001DC271 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = B4452B082B727A53001DC271 /* README.md */; };
 		B4C2DAEB2B71257D00845855 /* WordScrambleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C2DAEA2B71257D00845855 /* WordScrambleApp.swift */; };
 		B4C2DAED2B71257D00845855 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C2DAEC2B71257D00845855 /* ContentView.swift */; };
 		B4C2DAEF2B71257E00845855 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4C2DAEE2B71257E00845855 /* Assets.xcassets */; };
@@ -14,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B4452B052B7277F5001DC271 /* start.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = start.txt; sourceTree = "<group>"; };
+		B4452B072B727A53001DC271 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		B4452B082B727A53001DC271 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B4C2DAE72B71257D00845855 /* WordScramble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WordScramble.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4C2DAEA2B71257D00845855 /* WordScrambleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordScrambleApp.swift; sourceTree = "<group>"; };
 		B4C2DAEC2B71257D00845855 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -35,6 +41,8 @@
 		B4C2DADE2B71257D00845855 = {
 			isa = PBXGroup;
 			children = (
+				B4452B072B727A53001DC271 /* .gitignore */,
+				B4452B082B727A53001DC271 /* README.md */,
 				B4C2DAE92B71257D00845855 /* WordScramble */,
 				B4C2DAE82B71257D00845855 /* Products */,
 			);
@@ -53,6 +61,7 @@
 			children = (
 				B4C2DAEA2B71257D00845855 /* WordScrambleApp.swift */,
 				B4C2DAEC2B71257D00845855 /* ContentView.swift */,
+				B4452B052B7277F5001DC271 /* start.txt */,
 				B4C2DAEE2B71257E00845855 /* Assets.xcassets */,
 				B4C2DAF02B71257E00845855 /* Preview Content */,
 			);
@@ -125,7 +134,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4452B092B727A53001DC271 /* .gitignore in Resources */,
 				B4C2DAF22B71257E00845855 /* Preview Assets.xcassets in Resources */,
+				B4452B0A2B727A53001DC271 /* README.md in Resources */,
+				B4452B062B7277F5001DC271 /* start.txt in Resources */,
 				B4C2DAEF2B71257E00845855 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
